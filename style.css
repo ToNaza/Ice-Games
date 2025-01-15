@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; /* прибираємо відступи */
+    padding: 0; /* прибираємо внутрішні відступи */
+    height: 100vh; /* висота екрана */
+    background: rgb(255,255,255);
+    background: linear-gradient(357deg, rgba(255,255,255,1) 0%, rgba(49,193,181,1) 100%);
+}
+
+
+.snow {
+    position: fixed; /* Замість absolute, щоб залишатися на фоні */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Замість 100% для точного контролю */
+    height: 100vh; /* Використовувати vh для адаптації висоти */
+    pointer-events: none;
+    z-index: 9999;
+    background: transparent;
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Nazwa {
+    font-size: 25px;
+    font-family: 'Kalam';
+    background-color: #88ff88;
+    margin: 30px;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+    border-radius: 15px;
+    border: solid rgb(0, 0, 0) 2px;
+    
+
+}
+
+main{
+    p{
+        text-align: center;
+        font-size: 25px;
+        margin-top: 100px;
+    }
+
+    .btn{
+        text-align: center;
+        margin-top: 50px;
+        
+        button{
+            width: 300px;
+            height: 40px;
+            margin: 20px;
+            border: solid black 2px;
+            border-radius: 10px;
+            background-color: #cf88ff;
+            font-size: 18px;
+            font-family: 'Jura';
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        button:hover {
+            transform: scale(0.9);
+        }
+
+    }
+
+    .games{
+        text-align: center;
+        margin-top: 50px;
+
+        button{
+            width: 360px;
+            height: 300px;
+            margin: 40px;
+            border: solid black 6px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: 'Jura';
+            font-weight: bold;
+        }
+
+        }
+    }
+
+    #btn1 {
+        background-image: url('.//images/game1.png'); /* Путь к изображению */
+        background-size: cover; /* Масштабирование изображения */
+        background-position: center; /* Позиционирование изображения */
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transform: rotate(180deg); /* Розворот кнопки */
+        width: 360px; /* Ширина кнопки */
+        margin: 40px; /* Висота кнопки */
+        transition: transform 0.3s ease; /* Анімація змін */
+    }
+    
+    #btn1:hover {
+        transform: rotate(180deg) scale(0.9); /* Зменшуємо розмір до 90% при наведенні */
+        border: solid rgb(60, 255, 0) 6px;
+    }
+
+
+    #btn2 {
+        background-image: url('.//images/game2.png'); /* Путь к изображению */
+        background-size: cover; /* Масштабирование изображения */
+        background-position: center; /* Позиционирование изображения */
+        background-repeat: no-repeat;
+        cursor: pointer;
+        /* transform: rotate(180deg); */
+        width: 360px; /* Ширина кнопки */
+        margin: 40px; /* Висота кнопки */
+        transition: transform 0.3s ease; /* Анімація змін */
+    }
+    
+    #btn2:hover {
+        transform: scale(0.9); /* Зменшуємо розмір до 90% при наведенні */
+        border: solid rgb(60, 255, 0) 6px;
+    }
+
+
+    #btn3 {
+        background-image: url('.//images/game3.jpg'); /* Путь к изображению */
+        background-size: cover; /* Масштабирование изображения */
+        background-position: center; /* Позиционирование изображения */
+        background-repeat: no-repeat;
+        cursor: pointer;
+        /* transform: rotate(180deg); */
+        width: 360px; /* Ширина кнопки */
+        margin: 40px; /* Висота кнопки */
+        transition: transform 0.3s ease; /* Анімація змін */
+    }
+    
+    #btn3:hover {
+        transform: scale(0.9); /* Зменшуємо розмір до 90% при наведенні */
+        border: solid rgb(60, 255, 0) 6px;
+    }
+    
+
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1000;
+        opacity: 0; /* Початковий стан — прозорий */
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      #overlay.active {
+        opacity: 1; /* Під час анімації з'являється чорний фон */
+        pointer-events: all;
+      }
+      
+      #overlay.fadeOut {
+        opacity: 0; /* Для освітлення на новій сторінці */
+      }
+
+
+
+
+    
+    
+      #Game3 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease;
+        background-color: rgba(0, 0, 0, 0.692);
+    }
+    
+    #Game3Box {
+        width: 900px;
+        height: 700px;
+        background-color: rgb(166, 166, 166);
+        border: 5px solid black;
+        margin: auto;
+        margin-top: 220px;
+        border-radius: 10px;
+        transform: scale(0.7);
+        transition: transform 0.5s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #Game3Box img {
+        width: 30px;
+        margin: 5px;
+        border-radius: 5px;
+        margin-bottom: 2px;
+    }
+    
+    #closemodul {
+        width: 25px;
+        height: 25px;
+        margin: 4px;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 50px;
+        background-color: hsl(0, 100%, 65%);
+    }
+    
+    #Game3.open {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    #Game3.open #Game3Box {
+        transform: scale(1);
+    }
+
+    
+    .panel{
+        width: 100%;
+        height: 70px;
+        background-color: rgb(83, 83, 83);
+        display: flex;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+
+        margin-top: auto;
+        p{
+            margin-right: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    #versionInfo{
+        margin: 20px;
+        bottom: 0;
+        position: absolute;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .balls {
+        width: 250px;
+        height: 50px;
+        margin: auto;
+        background-color: rgb(141, 131, 131);
+        border: 3px solid black;
+        border-radius: 20px;
+    }
+    
+    .balls p {
+        text-align: left;
+        padding-left: 10px;
+        line-height: 50px; /* Додає вертикальне вирівнювання тексту */
+        margin: 0; /* Прибирає зайві відступи */
+    }
+    
+    .falling-box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        animation: fall 5s linear forwards; /* Використовуємо 'forwards' для зупинки в кінці */
+    }
+    
+    @keyframes fall {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: 84%; /* Встановлюємо кінець анімації на 100% висоти контейнера */
+        }
+    }
+    
+      
+    
+    #startGameButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    #score-display {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    
+    #pause-menu {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    #pause-menu button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .panel {
+        text-align: center;
+        padding: 20px;
+        color: rgb(0, 0, 0);
+    }
+    
+    

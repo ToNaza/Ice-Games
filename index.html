@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Games</title>
+
+    <link rel="icon" href="./images/snow.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="snow"></div>
+
+    <header>
+        <div class="container">
+            <p class="Nazwa">Ice Games</p>
+        </div>
+                
+    </header>
+
+    <main>
+    <p>Вітаю на нашому сайті з тематикою новорічних міні ігор<br> натисніть нижче на те що вас цікавить </p>
+    <div class="btn">
+        <button onclick="animateTransition('./info_or_site/main.html')">Інфо про сайт</button>
+        <button onclick="animateTransition('./info_prof/main.html')">Інфо про розробників</button>
+      </div>
+      <div id="overlay"></div>
+      
+    
+    <div class="games">
+        <button id="btn1"></button>
+        <button id="btn2"></button>
+        <button id="btn3"></button>
+    </div>
+
+    <div class="balls">   <p id="ballplayer">Ваші бали: 0</p>     </div>
+    </main>
+
+    <div id="Game3">
+        <div id="Game3Box">
+            <!-- <div id="panel"></div> -->
+            <button id="closemodul">×</button>
+            <button class="btnstart" id="startGameButton">Почати гру</button>
+            <div class="panel" id="panel">
+                <p id="ballplayer">Ваші бали: 0</p>
+                <p id="ballgame">Отримані бали: 0</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+<script src="./script.js" defer></script>
+<script src="./versions.js" defer></script>
+<footer><p id="versionInfo"></p></footer>
+</body>
+</html>

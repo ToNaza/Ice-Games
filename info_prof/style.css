@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; /* прибираємо відступи */
+    padding: 0; /* прибираємо внутрішні відступи */
+    height: 100vh; /* висота екрана */
+    background: rgb(255,255,255);
+    background: linear-gradient(357deg, rgb(143, 143, 143) 0%, rgb(49, 99, 193) 100%);
+}
+
+
+.snow {
+    position: fixed; /* Замість absolute, щоб залишатися на фоні */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Замість 100% для точного контролю */
+    height: 100vh; /* Використовувати vh для адаптації висоти */
+    pointer-events: none;
+    z-index: 9999;
+    background: transparent;
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Nazwa {
+    font-size: 25px;
+    font-family: 'Kalam';
+    background-color: #88ff88;
+    margin: 30px;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+    border-radius: 15px;
+    border: solid rgb(0, 0, 0) 2px;
+    
+
+}
+
+main{
+    p{
+        text-align: center;
+        font-size: 25px;
+        margin-top: 100px;
+        font-family: 'Kalam';
+    }
+
+    .btn{
+        position: absolute;
+        bottom: 0;
+        left: 6%;
+        transform: translateX(-50%); /* вирівнює кнопку по центру */
+        text-align: left;
+        margin-top: 50px;
+        
+        button{
+            width: 200px;
+            height: 35px;
+            margin: 20px;
+            border: solid black 2px;
+            border-radius: 10px;
+            background-color: #ff1515;
+            color: rgb(0, 255, 55);
+            font-size: 18px;
+            font-family: 'Jura';
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            
+        }
+        button:hover {
+            transform: scale(0.9);
+        }
+
+    }
+}
+
+.baner{
+    background-color: rgb(87, 87, 87);
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+
+    p{
+        padding: 5px;
+    }
+}
+
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+    opacity: 0; /* Початковий стан — прозорий */
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  #overlay.active {
+    opacity: 1; /* Під час анімації з'являється чорний фон */
+    pointer-events: all;
+  }
+  
+  #overlay.fadeOut {
+    opacity: 0; /* Для освітлення на новій сторінці */
+  }
+
+  #versionInfo{
+    margin: 20px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+
+}
